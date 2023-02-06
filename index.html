@@ -8693,10 +8693,30 @@
 			    contador = 3;
 				spin3();
 			}
-			else
+			else if (contador == 3)
+			{
+			    contador = 4;
+				spin4();
+			}
+			else if (contador == 4)
+			{
+				contador = 5;
+				spin5();
+			}
+			else if (contador == 5)
+			{
+			    contador = 6;
+				spin6();
+			}
+			else if (contador == 6)
+			{
+			    contador = 7;
+				spin7();
+			}
+			else if (contador == 7)
 			{
 			    contador = 0;
-				spin4();
+				spin8();
 			}
 		}
 		
@@ -8749,6 +8769,54 @@
             }, 42000, 'easeInOutQuart');
 
             setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 42000);
+        }
+		
+		function spin5() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+            var snd = new Audio("piao-strikes-back.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 49000, 'easeInOutQuart');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 49000);
+        }
+		
+		function spin6() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+            var snd = new Audio("piao-galvao.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 36800, 'easeInBounce');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 36800);
+        }
+		
+		function spin7() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+			var snd = new Audio("piao-ultimo.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 40000, 'easeOutBack');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 40000);
+        }
+		
+		function spin8() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+            var snd = new Audio("piao-hero.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 48000, 'easeInOutQuart');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 48000);
         }
     </script>
 </head>
