@@ -8681,7 +8681,7 @@
 			if (contador == 0)
 			{
 				contador = 1;
-				spin();
+				spin10();
 			}
 			else if (contador == 1)
 			{
@@ -8715,8 +8715,18 @@
 			}
 			else if (contador == 7)
 			{
-			    contador = 0;
+			    contador = 8;
 				spin8();
+			}
+			else if (contador == 8)
+			{
+			    contador = 9;
+				spin9();
+			}
+			else if (contador == 9)
+			{
+			    contador = 0;
+				spin10();
 			}
 		}
 		
@@ -8802,9 +8812,9 @@
             snd.play();
             $leftWheel.animate({
                 top: -leftWheelIndex * 600
-            }, 40000, 'easeOutBack');
+            }, 38700, 'easeOutBack');
 
-            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 40000);
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 38700);
         }
 		
 		function spin8() {
@@ -8818,6 +8828,31 @@
 
             setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 48000);
         }
+		
+		function spin9() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+            var snd = new Audio("silvio-triggered.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 11000, 'easeInOutQuart');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 19000);
+        }
+		
+		function spin10() {
+            var leftWheelIndex = randomItemIndex(leftItems.length - 1);
+			console.log(leftWheelIndex);
+            var snd = new Audio("piao-storm.mp3");
+            snd.play();
+            $leftWheel.animate({
+                top: -leftWheelIndex * 600
+            }, 10000, 'easeOutQuad');
+
+            setTimeout(function () { party.screen(); document.getElementById('btnRodaRoda').innerText = 'Sortear'; }, 10000);
+        }
+
     </script>
 </head>
 <body>
