@@ -125,9 +125,11 @@ function spinStart() {
   //document.getElementById("btnRodaRoda").classList.add("rainbow-bg");
 }
 
-function spinEnd() {
+function spinEnd(cooldownTime = 0) {
   party.screen();
-  document.getElementById("btnRodaRoda").innerText = "Sortear";
+  setTimeout(() => {
+    document.getElementById("btnRodaRoda").innerText = "Sortear";
+  }, cooldownTime);
   // document.getElementById("btnRodaRoda").classList.remove("rainbow");
   // document.getElementById("btnRodaRoda").classList.remove("rainbow-bg");
 }
@@ -142,7 +144,7 @@ function spin() {
     },
     43000,
     "easeInOutQuart",
-    () => spinEnd()
+    () => spinEnd(12000)
   );
 }
 
@@ -269,7 +271,7 @@ function spin9() {
     },
     11000,
     "easeInOutQuart",
-    () => spinEnd()
+    () => spinEnd(8000)
   );
 }
 
