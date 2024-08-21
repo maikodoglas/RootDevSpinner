@@ -20,8 +20,8 @@
 .slot-wheel-mask {
     display: inline-block;
     height: 600px;
-    margin-bottom: -20px;
-    margin-left: 10px;
+    /* margin-bottom: -20px;
+    margin-left: 10px; */
     margin-right: 10px;
     overflow: hidden;
     position: relative;
